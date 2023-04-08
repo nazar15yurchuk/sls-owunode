@@ -2,10 +2,24 @@
   "name": "sls-owunode",
   "version": "1.0.0",
   "description": "sls serverless owunode",
-  "main": "index.js",
+  "main": "src/handlers/get-todos.js",
   "scripts": {
+    "start:local": "sls offline start",
+    "start:dev": "sls offline start --stage dev",
+    "start:prod": "sls offline start --stage prod",
+    "deploy:dev": "sls deploy --stage dev",
+    "deploy:prod": "sls deploy --stage prod",
+    "remove:dev": "sls remove --stage dev",
+    "remove:prod": "sls remove --stage prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "nazary",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^5.2.0",
+    "serverless-dotenv-plugin": "^6.0.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^12.0.4"
+  }
 }
